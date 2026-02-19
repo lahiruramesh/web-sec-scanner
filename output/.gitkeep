@@ -1,0 +1,2 @@
+# This directory is used to store crawler output and security reports
+# Both packages (web-crawler and security-analyzer) share this output folder

@@ -1,0 +1,34 @@
+{
+  "name": "sylonik-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Monorepo for web crawler and security analyzer tools",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "type-check": "turbo run type-check",
+    "clean": "rm -rf node_modules packages/*/node_modules packages/*/dist packages/*/.turbo",
+    "crawler:dev": "pnpm --filter @sylonik/web-crawler dev",
+    "crawler:build": "pnpm --filter @sylonik/web-crawler build",
+    "crawler:start": "pnpm --filter @sylonik/web-crawler start",
+    "crawler:crawl": "pnpm --filter @sylonik/web-crawler crawl",
+    "analyzer:dev": "pnpm --filter @sylonik/security-analyzer dev",
+    "analyzer:build": "pnpm --filter @sylonik/security-analyzer build",
+    "analyzer:start": "pnpm --filter @sylonik/security-analyzer start",
+    "scan": "node scripts/scan.js",
+    "list-models": "cd packages/security-analyzer && node scripts/list-gemini-models.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
